@@ -7,16 +7,12 @@
       <h1><a href="">My Second Blog</a></h1>
     </div>
 
-    <div>
-      <p>published: 22.04.2016, 14:33</p>
-      <h2><a href="">My first post</a></h2>
-      <p>S1 is a test. S1 is a test. S1 is a test. S1 is a test. S1 is a test. S1 is a test. S1 is a test.</p>
-    </div>
-
-    <div>
-      <p>published: 22.04.2016, 14:33</p>
-      <h2><a href="">My second post</a></h2>
-      <p>S2 is a test. S2 is a test. S2 is a test. S2 is a test. S2 is a test. S2 is a test. S2 is a test. S2 is a test. S2 is a test. </p>
-    </div>
+    {% for post in posts %}
+      <div>
+        <p>published: {{post.publisehd_date}}</p>
+        <h1><a href="">{{post.title}}</a></h1>
+        <p>{{post.text|linebreaks}}</p>
+      </div>
+    {% endfor %}
   </body>
 </html>
